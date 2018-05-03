@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <main/>
+    <script>
+      {
+        const script = document.createElement('script');
+        const port = process.env.PORT || 3000;
+        script.src = (process.env.HOT)
+          ? 'http://localhost:' + port + '/transpiledApp/bundle.js'
+          : './transpiledApp/bundle.js';
+        // HACK: Writing the script path should be done with webpack
+        document.body.appendChild(script);
+      }
+    </script>
+  </body>
+</html>
